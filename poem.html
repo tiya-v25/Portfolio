@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Poems | Tiya Verma</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #dcc7c7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .arrow {
+      background-color: #fcdde1;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      color: #555;
+      cursor: pointer;
+      margin: 0 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .arrow:hover {
+      background-color: #f9c5cc;
+    }
+
+    .poem-container {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      background-color: #eee;
+    }
+
+    .poem-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      border-radius: 15px;
+    }
+
+    .poem-image.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>POEMS</h1>
+
+  <div class="slider-wrapper">
+    <button class="arrow" onclick="prevImage()">&#8592;</button>
+    
+    <div class="poem-container">
+      <img src="images/poem1.jpg" alt="Poem 1" class="poem-image active">
+      <img src="images/poem2.jpg" alt="Poem 2" class="poem-image">
+      <img src="images/poem3.jpg" alt="Poem 3" class="poem-image">
+      <img src="images/poem4.jpg" alt="Poem 4" class="poem-image">
+      <img src="images/poem5.jpg" alt="Poem 5" class="poem-image">
+      <img src="images/poem6.jpg" alt="Poem 6" class="poem-image">
+      <img src="images/poem7.jpg" alt="Poem 7" class="poem-image">
+      <img src="images/poem8.jpg" alt="Poem 8" class="poem-image">
+      
+    </div>
+    
+    <button class="arrow" onclick="nextImage()">&#8594;</button>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.poem-image');
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+  </script>
+
+  <p style="margin-top: 30px; font-size: 1.2rem; color: #444; text-align: center;">
+    Thank you for reading! <br/>
+    
+  </p>
+  
+
+</body>
+</html>

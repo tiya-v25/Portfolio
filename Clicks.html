@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #dac8c8;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 20px 0 10px;
+      color: #333;
+    }
+
+    .subheading {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #666;
+    }
+
+    .carousel-section {
+      margin: 50px 0;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.1s ease;
+      flex-shrink: 0;
+    }
+
+    .carousel img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.8);
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 18px;
+      z-index: 1;
+    }
+
+    .arrow.left {
+      left: -15px;
+    }
+
+    .arrow.right {
+      right: -15px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel img {
+        width: 160px;
+        height: 120px;
+      }
+
+      .arrow.left, .arrow.right {
+        top: auto;
+        bottom: -35px;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Gallery</h1>
+  <p class="subheading">cam | haha | smile</p>
+
+  <div class="carousel-section">
+    <div class="carousel">
+      <button class="arrow left" onclick="scrollCarousel('childTrack', -1)">&#8592;</button>
+      <div class="carousel-track" id="childTrack">
+        <img src="images/tiya1.jpg" alt="Photo 1" />
+        <img src="images/tiya2.jpg" alt="Photo 3" />
+        <img src="images/pic2.jpg" alt="Photo 2" />
+        <img src="images/pic4.jpg" alt="Photo 4" />
+        <img src="images/pic5.jpg" alt="Photo 5" />
+        <img src="images/tiya3.jpg" alt="Photo 3" />
+        <img src="images/pic6.jpg" alt="Photo 6" />
+        
+      </div>
+      <button class="arrow right" onclick="scrollCarousel('childTrack', 1)">&#8594;</button>
+    </div>
+  </div>
+  <div class="carousel-section">
+    <div class="carousel" id="carousel2">
+      <button class="arrow left" onclick="move('monuTrack', -1)">&#8592;</button>
+      <div class="carousel-track" id="monuTrack">
+        <img src="images/pic3.jpg" alt="img 1">
+        <img src="images/building.jpg" alt="img 2">
+        <img src="images/car.jpg" alt="img 3">
+        <img src="images/kempty.jpg" alt="img 4">
+        <img src="images/sunset.jpg" alt="img 5">
+        <img src="images/moon.jpg" alt="img 6">
+        <img src="images/mountain.jpg" alt="img 7">
+        <img src="images/moon1.jpg" alt="img 8">
+      </div>
+      <button class="arrow right" onclick="move('monuTrack', 1)">&#8594;</button>
+    </div>
+  </div>
+
+  <div class="carousel-section">
+    <div class="carousel" id="carousel3">
+      <button class="arrow left" onclick="move('friendsTrack', -1)">&#8592;</button>
+      <div class="carousel-track" id="friendsTrack">
+        <img src="images/pic1.jpg" alt="img 1">
+        <img src="images/pic7.jpg" alt="img 2">
+        <img src="images/friends.jpg" alt="img 3">
+        <img src="images/friends1.jpg" alt="img 4">
+        <img src="images/arshiya.jpg" alt="img 4">
+      </div>
+      <button class="arrow right" onclick="move('friendsTrack', 1)">&#8594;</button>
+    </div>
+  </div>
+
+  
+
+  <script>
+    function scrollCarousel(id, direction) {
+      const container = document.getElementById(id);
+      const scrollAmount = 245; 
+      container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>
