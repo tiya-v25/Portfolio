@@ -9,43 +9,86 @@
       background-color: #f5eaea;
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      padding: 40px 20px;
       text-align: center;
-      flex-direction: column;
-    }
-
-    .meme-image {
-      max-width: 300px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .message {
-      max-width: 500px;
-      font-size: 1.2rem;
-      line-height: 1.6;
       color: #444;
-      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #6b4b4b;
+    }
+
+    .project {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff3f3;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(107, 75, 75, 0.2);
+    }
+
+    .project img {
+      width: 45%;
+      max-width: 320px;
+      margin: 10px 2.5%;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(107, 75, 75, 0.2);
+    }
+
+    .description {
+      text-align: left;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #4a3f3f;
     }
 
     .highlight {
       font-weight: bold;
       color: #6b4b4b;
     }
+
+    @media (max-width: 768px) {
+      .project img {
+        width: 90%;
+        margin: 10px 0;
+      }
+
+      .description {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
-  <img src="images/workjoke.jpg" alt="funny meme" class="meme-image" />
-  <div class="message">
-    <span class="highlight">oops! nothing to see here yet, you caught me before I did anything impressive.</span><br />
-    Bold of you to assume I’m done. <br />
-    <br>  [No projects to showcase at the moment, but this page will be updated with my projects soon]<br/>
-   Thanks for stopping by though!
+
+  <h1>My Work</h1>
+
+  <div class="project">
+    <h2 class="highlight">Sort Master: Interactive Sorting Algorithm Visualizer</h2>
+    
+    <p class="description">
+      An advanced web-based tool designed to provide an intuitive and engaging visualization of key sorting algorithms. This project aims to enhance the understanding of algorithmic concepts through real-time, interactive demonstrations.
+    </p>
+    <p class="description">
+      Developed a dynamic and responsive interface using HTML, CSS, and JavaScript, allowing users to manipulate sorting parameters such as speed, algorithm selection, and data size.<br/>
+      Engineered optimized implementations of classic sorting algorithms including Quick Sort, Merge Sort, and Bubble Sort, highlighting their operational differences and performance characteristics.<br/>
+      Incorporated real-time visual feedback to facilitate deeper comprehension of algorithmic steps and efficiency, making it a valuable educational resource for learners and enthusiasts.<br/>
+      Applied best practices in UI/UX design to ensure the tool is accessible, visually appealing, and easy to navigate across different devices.
+    </p>
+
+    <div>
+      <img src="images/unsorted.png" alt="Sort Master Screenshot 1" />
+      <img src="images/processing.png" alt="Sort Master Screenshot 2" />
+      <img src="images/sorted.png" alt="Sort Master Screenshot 3" />
+    </div>
   </div>
+
 </body>
 </html>
+
+
+     
+    
