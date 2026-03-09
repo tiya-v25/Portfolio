@@ -539,12 +539,18 @@
     .nav-links { display: none; }
     #hero { padding: 0 24px 60px; }
     section { padding: 80px 24px; }
-    .about-grid, .skills-grid, .projects-grid, .achievements-list { grid-template-columns: 1fr; }
+    .about-grid, .skills-grid, .projects-grid, .achievements-list, .creator-grid { grid-template-columns: 1fr !important; }
     .exp-item { grid-template-columns: 1fr; gap: 16px; }
     footer { flex-direction: column; gap: 12px; text-align: center; }
     .hero-sub { flex-direction: column; gap: 24px; align-items: flex-start; }
-    .creator-grid { grid-template-columns: 1fr; }
-    .creator-stat-row { grid-template-columns: 1fr 1fr 1fr; }
+    .hero-cta { width: 100%; justify-content: center; }
+    .creator-stat-row { grid-template-columns: 1fr 1fr; }
+    .creator-about { padding: 32px 24px; }
+    .creator-cta-card { padding: 32px 24px; overflow: visible; }
+    .ig-handle { font-size: 22px; word-break: break-all; }
+    .ig-btn { width: 100%; justify-content: center; }
+    .contact-links { flex-direction: column; }
+    .contact-link { width: 100%; justify-content: center; }
   }
 
   /* RESPONSIVE — Mobile */
