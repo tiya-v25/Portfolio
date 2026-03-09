@@ -709,11 +709,25 @@
     gap: 2px;
     margin-bottom: 2px;
   }
+  @media (max-width: 900px) {
+    .creator-grid { grid-template-columns: 1fr !important; }
+    .creator-stat-row { grid-template-columns: 1fr 1fr !important; }
+    .creator-about { padding: 28px 20px !important; }
+    .creator-cta-card { padding: 28px 20px !important; overflow: visible !important; }
+    .ig-handle { font-size: 18px !important; word-break: break-word !important; overflow-wrap: break-word !important; }
+    .ig-btn { width: 100% !important; justify-content: center !important; box-sizing: border-box !important; }
+  }
   .creator-stat-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
     margin-bottom: 48px;
+  }
+  @media (max-width: 900px) {
+    .creator-stat-row { grid-template-columns: 1fr 1fr !important; margin-bottom: 24px !important; }
+  }
+  @media (max-width: 500px) {
+    .creator-stat-row { grid-template-columns: 1fr !important; }
   }
   .creator-stat {
     background: var(--surface);
