@@ -1,3 +1,13 @@
+// HAMBURGER MENU
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileClose = document.getElementById('mobile-menu-close');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  hamburger && hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+  mobileClose && mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
 // CURSOR
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursor-ring');
